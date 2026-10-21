@@ -1,0 +1,11 @@
+---
+description: TDD e coverage
+globs: "**/*.{test,spec}.{ts,tsx}"
+alwaysApply: false
+---
+
+# Testes
+
+- Ordem: teste que falha, implementação mínima, refactor.
+- O teste nomeia o comportamento, não o método.
+- Coverage mede o caminho da spec. Caminho sem teste não conta como pronto.

@@ -1,0 +1,12 @@
+---
+description: Como escrever specs que o agente executa
+globs: specs/**/*.md
+alwaysApply: false
+---
+
+# Spec
+
+- Uma spec por funcionalidade, em `specs/NNN-nome.md`.
+- A spec diz o que entra, o que sai e como saber que terminou.
+- Sem skill separada para SDD. A spec é o prompt da tarefa.
+- Cabeçalho fixo: objetivo, escopo, fora de escopo, critério de pronto.

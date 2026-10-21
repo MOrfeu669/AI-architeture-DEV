@@ -1,0 +1,18 @@
+---
+description: Convenções de back-end e API
+globs: backend/**/*
+alwaysApply: false
+---
+
+# Back-end
+
+- Endpoint novo segue a skill `api` e o `AGENTS.md` da pasta em que o arquivo está.
+- Contrato explícito: método, caminho, entrada, saída e erro.
+- Sem regra de interface nesta área.
+- Exemplo de health check:
+
+```ts
+export function health(): { status: "ok" } {
+  return { status: "ok" };
+}
+```
