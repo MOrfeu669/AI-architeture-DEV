@@ -1,6 +1,6 @@
-# AGENTS.md
+# 1 AGENTS.md
 
-Repositório representativo do ambiente descrito em `.seeds`. Não há produto aqui: as pastas existem para o agente saber onde cada peça mora.
+Repositorio construido para servir de base para projetos: as pastas com `AGEBTS.md` e `.cursor/` existem para ser alterados com base nas specs.
 
 ## Onde trabalhar
 
@@ -17,12 +17,13 @@ Repositório representativo do ambiente descrito em `.seeds`. Não há produto a
 
 Índice do código (`.codebase.mcp`) é gerado pela CLI, não versionado. Pergunta estrutural ("como funciona X?") passa pelo índice antes de varrer arquivo.
 
-## Fluxo de uma tarefa
+## configuração de ambiente
 
 1. Ler a spec em `specs/`.
-2. Ler o `AGENTS.md` da pasta em que o arquivo será criado.
-3. Implementar, testar, refatorar, medir coverage.
-4. Parar quando o critério da spec passar.
+2. Ler a definiçao dos `AGENTS.md`.
+3. editar o minimo dos `AGENT.md` conforme sua funcionalidade descrita e demanda do projeto
+3. Implementar, comparar, refatorar, medir coverage.
+4. Parar quando o agente representar sua funcionalidade.
 
 ## Modelo
 
@@ -38,3 +39,30 @@ Mais effort só quando a spec pede raciocínio. Tarefa cotidiana fica no modelo 
 ## Subagentes
 
 Review e release notes são agentes, não skills: o critério muda com a funcionalidade. Cada um declara onde para. Worktree é um diretório Git isolado por agente; o merge volta para a branch da tarefa.
+
+## Comclusão
+
+apos concluir a criaçao dos AGENTES, altere aste arquivo com base nas definiçoes seguintes...
+
+```markdown
+# AGENTS.md
+
+## Projeto
+O que é, para quem, e o que está fora do escopo.
+
+## Mapa
+- `api/` — ver `api/AGENTS.md`
+- `web/` — ver `web/AGENTS.md`
+
+## Regras de negócio
+Invariantes e vocabulário do domínio.
+
+## Verificar
+- Testes: `…`
+- Lint: `…`
+- Coverage: `…`
+Pronto = testes passando e coverage no limite do projeto.
+
+## Convenções
+Commits, PRs, tamanho de arquivo, o que pedir confirmação antes de fazer.
+```
