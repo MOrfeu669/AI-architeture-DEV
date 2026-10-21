@@ -87,7 +87,7 @@ Recarregue a janela do Cursor. Em **Settings → MCP**, os três devem aparecer 
 Na raiz do repositório:
 
 ```powershell
-codebase-memory-mcp cli index_repository --repo-path "C:\..."
+codebase-memory-mcp cli index_repository --repo-path "$PWD" --persistence true
 codebase-memory-mcp cli list_projects
 ```
 
