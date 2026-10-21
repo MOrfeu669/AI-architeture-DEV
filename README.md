@@ -18,7 +18,11 @@ npx -v
 git --version
 ```
 
+
+
 ## Instalação
+
+
 
 ### 1. Abrir o repositório no Cursor
 
@@ -54,6 +58,8 @@ Feche e abra o terminal e confirme:
 codebase-memory-mcp --version
 ```
 
+
+
 ### 3. Autenticar o Context7
 
 O servidor já está declarado em `.cursor/mcp.json`. A autenticação é por máquina. Com Node.js 18 ou superior:
@@ -74,11 +80,13 @@ Não commite a chave. Se o setup gravar `--api-key` dentro de `.cursor/mcp.json`
 
 O arquivo do projeto já declara os três servidores:
 
-| MCP | Declaração | Função |
-| --- | --- | --- |
-| Context7 | `npx -y @upstash/context7-mcp` | Documentação atual de bibliotecas |
-| GitHub | `https://api.githubcopilot.com/mcp/` | Issues, pull requests e checks |
-| Codebase Memory | comando `codebase-memory-mcp` | Índice em grafo do código |
+
+| MCP             | Declaração                           | Função                            |
+| --------------- | ------------------------------------ | --------------------------------- |
+| Context7        | `npx -y @upstash/context7-mcp`       | Documentação atual de bibliotecas |
+| GitHub          | `https://api.githubcopilot.com/mcp/` | Issues, pull requests e checks    |
+| Codebase Memory | comando `codebase-memory-mcp`        | Índice em grafo do código         |
+
 
 Recarregue a janela do Cursor. Em **Settings → MCP**, os três devem aparecer conectados. O GitHub pede login na primeira vez. O Codebase Memory só conecta depois que o binário está no `PATH` e o terminal foi reiniciado.
 
@@ -87,7 +95,7 @@ Recarregue a janela do Cursor. Em **Settings → MCP**, os três devem aparecer 
 Na raiz do repositório:
 
 ```powershell
-codebase-memory-mcp cli index_repository --repo-path "C:\..."
+codebase-memory-mcp cli index_repository --repo-path "$PWD" --persistence true
 codebase-memory-mcp cli list_projects
 ```
 
@@ -129,38 +137,48 @@ O harness deste repositório continua sendo o Cursor. O Caveman não substitui a
 codebase-memory-mcp daemon start --open --port=9749
 ```
 
+
+
 ## O que já está configurado
 
-| Pasta | Conteúdo |
-| --- | --- |
-| `.cursor/rules` | Regras por área. Só o guardrail é sempre ativo. |
-| `.cursor/skills` | Skills mínimas: `api` e `find-skill`. |
-| `.cursor/agents` | `code-review` e `release-notes`, cada um com ponto de parada. |
-| `.cursor/mcp.json` | Context7, GitHub e Codebase Memory. |
-| `specs` | Uma spec por funcionalidade. |
-| `backend` | API. |
-| `frontend` | Interface. |
-| `tests` | Testes do fluxo. |
-| `.seeds` | Manual e os dez passos da aula. |
+
+| Pasta              | Conteúdo                                                      |
+| ------------------ | ------------------------------------------------------------- |
+| `.cursor/rules`    | Regras por área. Só o guardrail é sempre ativo.               |
+| `.cursor/skills`   | Skills mínimas: `api` e `find-skill`.                         |
+| `.cursor/agents`   | `code-review` e `release-notes`, cada um com ponto de parada. |
+| `.cursor/mcp.json` | Context7, GitHub e Codebase Memory.                           |
+| `specs`            | Uma spec por funcionalidade.                                  |
+| `backend`          | API.                                                          |
+| `frontend`         | Interface.                                                    |
+| `tests`            | Testes do fluxo.                                              |
+| `.seeds`           | Manual e os dez passos da aula.                               |
+
 
 Regras injetadas pelo caminho do arquivo:
 
-| Arquivo | Quando entra |
-| --- | --- |
-| `.cursor/rules/guardrail.mdc` | Sempre |
-| `.cursor/rules/backend.mdc` | `backend/**/*` |
-| `.cursor/rules/frontend.mdc` | `frontend/**/*` |
-| `.cursor/rules/prompt.mdc` | `specs/**/*.md` |
-| `.cursor/rules/tests.mdc` | arquivos `*.test.ts`, `*.spec.ts` e equivalentes em TSX |
+
+| Arquivo                       | Quando entra                                            |
+| ----------------------------- | ------------------------------------------------------- |
+| `.cursor/rules/guardrail.mdc` | Sempre                                                  |
+| `.cursor/rules/backend.mdc`   | `backend/**/*`                                          |
+| `.cursor/rules/frontend.mdc`  | `frontend/**/*`                                         |
+| `.cursor/rules/prompt.mdc`    | `specs/**/*.md`                                         |
+| `.cursor/rules/tests.mdc`     | arquivos `*.test.ts`, `*.spec.ts` e equivalentes em TSX |
+
+
+
 
 ## Modelos
 
-| Uso | Modelo |
-| --- | --- |
-| Segurança de fluxo e produto | Fable |
-| Quebrar spec e raciocínio | Opus |
-| Código do dia | Sonnet |
-| Ler doc ou código, com a spec já fechada | Haiku |
+
+| Uso                                      | Modelo |
+| ---------------------------------------- | ------ |
+| Segurança de fluxo e produto             | Fable  |
+| Quebrar spec e raciocínio                | Opus   |
+| Código do dia                            | Sonnet |
+| Ler doc ou código, com a spec já fechada | Haiku  |
+
 
 Effort maior só quando a spec pede raciocínio. Tarefa cotidiana fica no modelo do dia.
 
@@ -179,6 +197,8 @@ Trabalhe no modo orquestrado: um chat por tarefa, com a instrução completa. Re
 - Peça uma tela e confira se entrou a regra de front, sem regra de endpoint.
 - Pergunte "como funciona o health check?" e veja se a resposta cita o arquivo indexado.
 - Rode uma spec pequena até o critério de pronto, sem o agente abrir a tarefa seguinte.
+
+
 
 ## Checklist
 
